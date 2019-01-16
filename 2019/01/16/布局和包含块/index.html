@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Jhyu Bolg">
 <meta property="og:description" content="什么是包含块？一个元素的尺寸和位置经常受包含块的影响，包含块就是这个元素最近的祖先块（父级）元素的内容区，但也不总是这样。 包含块的重要性，或者说：什么时候用？当我们对元素赋予百分比值时，元素的width、height、padding、margin，position被设置为absolute或fixed时，这些值的计算值通过包含块来计算。     疑问：那么sizing-box可否替代包含快？它们有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-16T10:40:11.819Z">
+<meta property="og:updated_time" content="2019-01-16T12:36:47.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="布局和包含块">
 <meta name="twitter:description" content="什么是包含块？一个元素的尺寸和位置经常受包含块的影响，包含块就是这个元素最近的祖先块（父级）元素的内容区，但也不总是这样。 包含块的重要性，或者说：什么时候用？当我们对元素赋予百分比值时，元素的width、height、padding、margin，position被设置为absolute或fixed时，这些值的计算值通过包含块来计算。     疑问：那么sizing-box可否替代包含快？它们有">
@@ -418,7 +418,7 @@
                 
               
 
-              <time title="创建时间：2019-01-16 14:39:07 / 修改时间：18:40:11" itemprop="dateCreated datePublished" datetime="2019-01-16T14:39:07+08:00">2019-01-16</time>
+              <time title="创建时间：2019-01-16 14:39:07 / 修改时间：20:36:47" itemprop="dateCreated datePublished" datetime="2019-01-16T14:39:07+08:00">2019-01-16</time>
             
 
             
@@ -454,6 +454,17 @@
           
 
           
+          
+            <span id="/2019/01/16/布局和包含块/" class="leancloud_visitors" data-flag-title="布局和包含块">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -859,6 +870,66 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'pU5apIzp2rMq7MQvsJcSvtMI-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'pU5apIzp2rMq7MQvsJcSvtMI-gzGzoHsz',
+                'X-LC-Key': 'HEE14WG4cqKME8sAog2oYk7z',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 
