@@ -1731,7 +1731,7 @@ pre .javascript .function {
 }
 .sidebar a:hover,
 .sidebar .exturl:hover {
-  color: #eee;
+  color: #fc6423;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .sidebar {
@@ -1915,7 +1915,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d4fff6;
+  background: #9d3bff;
 }
 .links-of-blogroll {
   font-size: 13px;
