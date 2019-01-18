@@ -1139,7 +1139,15 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: transparent;
+/*background: $head-bg; */
+  background-image: url("/images/elliott-engelmann-30045-unsplash.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 .header-inner {
   position: relative;
@@ -1915,7 +1923,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9d3bff;
+  background: #4dff36;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2747,7 +2755,7 @@ embed {
 .menu .menu-item a:hover,
 .menu .menu-item span.exturl:hover {
   border-bottom-color: #222 !important;
-  color: #222;
+  color: /*$black-deep*/ #fc6423;
 }
 @media (max-width: 767px) {
   .menu-item-active a,
