@@ -1923,7 +1923,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4dff36;
+  background: #390575;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2722,7 +2722,7 @@ embed {
 .custom-logo .site-title {
   margin: 10px auto 0;
   font-size: 24px;
-  color: #222;
+  color: #eee /*$black-deep $gainsboro $orange*/;
 }
 .custom-logo .site-title a {
   border: none;
@@ -2754,7 +2754,7 @@ embed {
 .menu-item-active a,
 .menu .menu-item a:hover,
 .menu .menu-item span.exturl:hover {
-  border-bottom-color: #222 !important;
+  border-bottom-color: /*$menu-link-hover-border*/ #fc6423 !important;
   color: /*$black-deep*/ #fc6423;
 }
 @media (max-width: 767px) {
@@ -2801,7 +2801,7 @@ embed {
 @media (hover: none) {
   .menu .menu-item a:hover,
   .menu .menu-item span.exturl:hover {
-    border-bottom-color: transparent !important;
+    border-bottom-color: /* transparent*/ #fc6423 !important;
   }
 }
 .menu .menu-item .fa {
